@@ -1,0 +1,485 @@
+<div class="main_dashboard">
+
+    <!-- <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+        Link with href
+      </a>
+      <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        Button with data-bs-target
+      </button> -->
+      
+      <div class="offcanvas offcanvas-start overflow-hidden" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <div class="offcanvas-title px-3 " id="offcanvasExampleLabel">
+              <span (click)="toggleSidebar($event)" class="toggle_container d-inline-block me-4">
+                    <img src="../../../assets/images/toggle_sidebar.svg" alt="">
+              </span>
+              <span class="egora_logo d-inline-block ms-2">
+                <img height="110px" width="110px" src="../../../assets/images/egora_logo.svg" alt="">
+              </span>
+          </div>
+          <button hidden type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body overflow-hidden">
+          <ul class="first_ul w-100 ps-3">
+             <li class="first_ul__listItem w-100 d-flex justify-content-between align-items-center"> 
+                 <span class="contain">
+                    <span class="me-3"><img height="25px" width="25px" src="../../../assets/images/settings_icon.svg" alt=""></span> 
+                      <span class="me-5 ps-4 targetted">Configuration</span>
+             </span>   
+             <span class="pe-3 targetted_icon"><img height="18px" width="18px" src="../../../assets/images/arrow_right.svg" alt=""></span>  
+            </li>
+          </ul>
+          <div class="divider my-2">
+
+          </div>
+          <ul class="second_ul w-100 py-3 mb-2 ps-3">
+            <li class="second_ul__listItem w-100 d-flex justify-content-between align-items-center my-4"> 
+                <span class="contain">
+                   <span class="me-3"><img height="25px" width="25px" src="../../../assets/images/validation_icon.svg" alt=""></span> 
+                     <span class="me-5 ps-4 targetted">Validation</span>
+                </span>   
+                
+             </li>
+
+           <li class="second_ul__listItem w-100 d-flex justify-content-between align-items-center my-4"> 
+                    <span class="contain">
+                    <span class="me-3"><img height="25px" width="25px" src="../../../assets/images/accounting_icon.svg" alt=""></span> 
+                        <span class="me-5 ps-4 targetted">Accounting</span>
+                </span>   
+
+            </li>
+
+            <li class="second_ul__listItem w-100 d-flex justify-content-between align-items-center my-4"> 
+                <span class="contain">
+                <span class="me-3"><img height="25px" width="25px" src="../../../assets/images/reevaluation_icon.svg" alt=""></span> 
+                    <span class="me-5 ps-4 targetted">Revaluation</span>
+                </span>   
+                
+             </li>
+
+         </ul>
+
+          <div class="divider targetted mt-2 ps-4 mb-4">
+                DATA MANAGER
+          </div>
+
+          <ul class="third_ul py-2 ps-3 mb-2">
+            <li class="third_ul__listItem w-100 d-flex justify-content-between align-items-center"> 
+                <span class="contain">
+                   <span class="me-3"><img height="25px" width="25px" src="../../../assets/images/static_data_icon.svg" alt=""></span> 
+                     <span class="me-5 ps-4 text_gradient targetted">Static Data</span>
+            </span>   
+             <span  class=" pe-3 targetted_icon"><img height="18px" width="18px" src="../../../assets/images/gradient_icon_right.svg" alt=""></span>  
+           </li>
+         </ul>
+
+         <ul class="fourth_ul w-100 py-3 mb-2 ps-3">
+            <li class="fourth_ul__listItem w-100 d-flex justify-content-between align-items-center my-4"> 
+                <span class="contain">
+                   <span class="me-3"><img height="25px" width="25px" src="../../../assets/images/financial_icon.svg" alt=""></span> 
+                     <span class="me-5 ps-4 targetted">Financial</span>
+                </span>   
+                
+             </li>
+
+           <li class="fourth_ul__listItem w-100 d-flex justify-content-between align-items-center my-4"> 
+                    <span class="contain">
+                    <span class="me-3"><img height="25px" width="25px" src="../../../assets/images/cash_flow.svg" alt=""></span> 
+                        <span class="me-5 ps-4 targetted">Cash Flow</span>
+                </span>   
+
+            </li>
+
+            <li class="fourth_ul__listItem w-100 d-flex justify-content-between align-items-center my-4"> 
+                <span class="contain">
+                <span class="me-3"><img height="25px" width="25px" src="../../../assets/images/financial_icon.svg" alt=""></span> 
+                    <span class="me-5 ps-4 targetted">Forex</span>
+                </span>   
+                
+             </li>
+
+             
+            <li class="fourth_ul__listItem w-100 d-flex justify-content-between align-items-center my-4"> 
+                <span class="contain">
+                <span class="me-3"><img height="25px" width="25px" src="../../../assets/images/sales_and_charts_icon.svg" alt=""></span> 
+                    <span class="me-5 ps-4 targetted">Sales and Brokerage Reports</span>
+                </span>   
+                
+             </li>
+
+             <li class="fourth_ul__listItem w-100 d-flex justify-content-between align-items-center my-4"> 
+                <span class="contain">
+                <span class="me-3"><img height="25px" width="25px" src="../../../assets/images/historical_reports.svg" alt=""></span> 
+                    <span class="me-5 ps-4 targetted">Historical Reports</span>
+                </span>   
+                
+             </li>
+
+         </ul>
+
+        </div>
+      </div>
+
+      <div class="major_side h-100 overflow-hidden ms-auto position-relative" >
+         <div  class="container-fluid">
+          <section class="nav d-flex justify-content-between align-items-center px-5 py-3">
+            <div  class="w-50 d-flex justify-content-start align-items-center">
+              <span (click)="toggleSidebar($event, 'remove')" class="toggle_container showWhenTogglerIsOff hide  me-4">
+                <img src="../../../assets/images/toggle_sidebar_black.svg" alt="">
+             </span>
+
+             <div style="height: 50px;" class="row align-items-center w-75">
+             
+              <div class="col-auto w-100 h-100 nav_search position-relative">
+                <input type="password" id="inputPassword6" class="form-control h-100 nav_search__input" aria-describedby="passwordHelpInline">
+                <div class="position-absolute search_icon">
+                   <span class="">
+                    <svg  width="20" height="20" viewBox="0 0 10 10" fill="none">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M3.63639 7.27278C1.62807 7.27278 0 5.64471 0 3.63639C0 1.62807 1.62807 0 3.63639 0C5.64471 0 7.27278 1.62807 7.27278 3.63639C7.27278 4.41949 7.02524 5.14477 6.60414 5.73827L9.99908 9.13321L9.13206 10.0002L5.73693 6.60509C5.14368 7.02561 4.4189 7.27278 3.63639 7.27278ZM6.36338 3.6362C6.36338 5.14245 5.14233 6.3635 3.63609 6.3635C2.12985 6.3635 0.908799 5.14245 0.908799 3.6362C0.908799 2.12996 2.12985 0.908912 3.63609 0.908912C5.14233 0.908912 6.36338 2.12996 6.36338 3.6362Z" fill="#758492"/>
+                      </svg>
+                   </span>
+                </div>
+              </div>
+            </div>
+            </div>
+            
+
+            <div class="user_details d-flex justify-content-between align-items-center ">
+              <div class="notification d-flex justify-content-center align-items-center">
+                <img height="20px" width="20px" src="../../../assets/images/notification_bell.svg" alt="">
+              </div>
+
+              <div class="ms-3">
+                <span class="name ">Emmanuel</span>
+                <span class="named_circle px-3 py-2 ms-2">E</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="w-100 px-5 py-3 betweenNavAnd_body">
+             <span class="me-3">Spot Deal</span>
+             <span class="ms-2">Forex</span>
+             <span class="d-inline-flex fw-bold flex-column justify-content-center align-items-center px-3"></span>
+             <span>Spot Deal</span>
+          </section>
+
+          <section class="dashboard_body position-relative">
+            <div class="dashboard_body__inner ">
+               <div class="row ruler position-relative">
+                 <div class="col-md-3">
+                   <div class="leftSide_holder">
+                    <div class="basic_information px-5 my-4">
+                      <span class="me-3">
+                        <img height="15px" width="15px" src="../../../assets/images/basic_info_icon.svg" alt=""> 
+                      </span>
+                      <span >
+                        Basic Information
+                      </span>
+                    </div>
+
+                     <div class="px-5 list_parent">
+                        <div (click)="startToggling($event, 'second_view')" class="list_item position-relative mt-5 mb-4 py-3 px-2">
+                          <span class="me-3 ms-1"> <input style="visibility: hidden;"  type="checkbox" name="second_view"  class="toggler_input"> </span> <span> Deal Terms </span>
+                        </div>
+                        <div (click)="startToggling($event, 'third_view')" class="list_item position-relative my-2 py-3 px-2">
+                          <span class="me-3 ms-1"> <input style="visibility: hidden;"  type="checkbox" name="third_view" class="toggler_input "> </span>  <span> Cash Flow </span>
+                       </div>
+
+                       <div (click)="startToggling($event, 'fourth_view')" class="list_item position-relative my-2 py-3 px-2">
+                        <span class="me-3 ms-1"> <input style="visibility: hidden;"  type="checkbox" name="fourth_view" class="toggler_input "> </span>  <span> Events </span>
+                       </div>
+                        <div (click)="startToggling($event, 'fifth_view')" class="list_item position-relative my-2 py-3 px-2"> 
+                          <span class="me-3 ms-1"> <input style="visibility: hidden;" type="checkbox" name="fifth_view" class="toggler_input "> </span>  <span> Others </span>
+                      </div>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="col-md-9  position-relative  p-5 ">
+                   <div id="first_view" [ngClass]="{'d-block': view == 'first_view'}" class="form_container mb-7">
+                    <form class="row g-4">
+
+                      <div class="seperator w-100 mt-4 mb-2">
+                        Basic Information
+                      </div>
+
+                      <div class="col-md-5 ball position-relative">
+                        <label for="inputEmail4" class="form-label">Deal Reference</label>
+                        <input type="text" class="form-control" id="inputEmail4">
+                      </div>
+                      
+                      <div class="col-md-6 ms-auto">
+                        <label for="inputEmail4" class="form-label">Deal Status</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="Nigerian Naira">
+                      </div>
+
+                      <div class="col-md-3">
+                        <label for="inputEmail4" class="form-label">Legal Entity </label>
+                        <input type="text" class="form-control" id="inputEmail4">
+                      </div>
+                      <div class="col-md-2 ball position-relative">
+                        <label for="inputEmail4" class="form-label " style="visibility: hidden;"> legal enity</label>
+                        <input type="text" class="form-control  " id="inputEmail4">
+                      </div>
+                      <div class="col-md-6 ms-auto">
+                        <label for="inputEmail4" class="form-label">Product</label>
+                        <input type="text" class="form-control" id="inputEmail4">
+                      </div>
+                      
+                      <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Our Ref</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="NGN">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Their Ref</label>
+                        <input type="text" class="form-control" id="inputPassword4" placeholder="Nigerian Naira">
+                      </div>
+
+                      <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Direction</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Trade</label>
+                        <input type="text" class="form-control" id="inputPassword4" placeholder="">
+                      </div>
+
+                      <div class="seperator second mt-5 my-2">
+                        Deal Terms <small>*</small>
+                      </div>
+
+                      <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Currency pair</label>
+                        <input type="email" class="form-control" id="inputEmail4">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Base CCY / Traded Amount</label>
+                        <input type="password" class="form-control" id="inputPassword4">
+                      </div>
+                      
+                      
+                      <!-- <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                      </div> -->
+                    </form>
+                   </div>
+                   <div id="second_view" [ngClass]="{'d-block': view == 'second_view'}" class="form_container mb-7">
+                    <form class="row g-4 ">
+
+                      <div class="seperator w-100 mt-4 mb-2">
+                        Deal Terms
+                      </div>
+
+                      <div class="col-md-5 ball position-relative">
+                        <label for="inputEmail4" class="form-label">Deal Reference</label>
+                        <input type="text" class="form-control" id="inputEmail4">
+                      </div>
+                      
+                      <div class="col-md-6 ms-auto">
+                        <label for="inputEmail4" class="form-label">Deal Status</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="Nigerian Naira">
+                      </div>
+
+                      <div class="col-md-3">
+                        <label for="inputEmail4" class="form-label">Legal Entity </label>
+                        <input type="text" class="form-control" id="inputEmail4">
+                      </div>
+                      <div class="col-md-2 ball position-relative">
+                        <label for="inputEmail4" class="form-label " style="visibility: hidden;"> legal enity</label>
+                        <input type="text" class="form-control  " id="inputEmail4">
+                      </div>
+                      <div class="col-md-6 ms-auto">
+                        <label for="inputEmail4" class="form-label">Product</label>
+                        <input type="text" class="form-control" id="inputEmail4">
+                      </div>
+                      
+                      <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Our Ref</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="NGN">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Their Ref</label>
+                        <input type="text" class="form-control" id="inputPassword4" placeholder="Nigerian Naira">
+                      </div>
+
+                      <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Direction</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Trade</label>
+                        <input type="text" class="form-control" id="inputPassword4" placeholder="">
+                      </div>
+
+                      <div class="seperator second mt-5 my-2">
+                        Deal Terms <small>*</small>
+                      </div>
+
+                      <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Currency pair</label>
+                        <input type="email" class="form-control" id="inputEmail4">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Base CCY / Traded Amount</label>
+                        <input type="password" class="form-control" id="inputPassword4">
+                      </div>
+                      
+                      
+                      <!-- <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                      </div> -->
+                    </form>
+                   </div>
+                   <div id="third_view" [ngClass]="{'d-block': view == 'third_view'}" class="form_container mb-7">
+                    <form class="row g-4 overflow-hidden">
+
+                      <div class="seperator w-100 mt-4 mb-2">
+                        Cash Flow
+                      </div>
+
+                      <div class="col-md-5 ball position-relative">
+                        <label for="inputEmail4" class="form-label">Deal Reference</label>
+                        <input type="text" class="form-control" id="inputEmail4">
+                      </div>
+                      
+                      <div class="col-md-6 ms-auto">
+                        <label for="inputEmail4" class="form-label">Deal Status</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="Nigerian Naira">
+                      </div>
+
+                      <div class="col-md-3">
+                        <label for="inputEmail4" class="form-label">Legal Entity </label>
+                        <input type="text" class="form-control" id="inputEmail4">
+                      </div>
+                      <div class="col-md-2 ball position-relative">
+                        <label for="inputEmail4" class="form-label " style="visibility: hidden;"> legal enity</label>
+                        <input type="text" class="form-control  " id="inputEmail4">
+                      </div>
+                      <div class="col-md-6 ms-auto">
+                        <label for="inputEmail4" class="form-label">Product</label>
+                        <input type="text" class="form-control" id="inputEmail4">
+                      </div>
+                      
+                      <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Our Ref</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="NGN">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Their Ref</label>
+                        <input type="text" class="form-control" id="inputPassword4" placeholder="Nigerian Naira">
+                      </div>
+
+                      <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Direction</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Trade</label>
+                        <input type="text" class="form-control" id="inputPassword4" placeholder="">
+                      </div>
+
+                      <div class="seperator second mt-5 my-2">
+                        Deal Terms <small>*</small>
+                      </div>
+
+                      <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Currency pair</label>
+                        <input type="email" class="form-control" id="inputEmail4">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Base CCY / Traded Amount</label>
+                        <input type="password" class="form-control" id="inputPassword4">
+                      </div>
+                      
+                      
+                      <!-- <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                      </div> -->
+                    </form>
+                   </div>
+                   <div id="fourth_view" [ngClass]="{'d-block': view == 'fourth_view'}" class="form_container mb-7">
+                    <form class="row g-4 overflow-hidden">
+
+                      <div class="seperator w-100 mt-4 mb-2">
+                        Events
+                      </div>
+
+                      <div class="col-md-5 ball position-relative">
+                        <label for="inputEmail4" class="form-label">Deal Reference</label>
+                        <input type="text" class="form-control" id="inputEmail4">
+                      </div>
+                      
+                      <div class="col-md-6 ms-auto">
+                        <label for="inputEmail4" class="form-label">Deal Status</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="Nigerian Naira">
+                      </div>
+
+                      <div class="col-md-3">
+                        <label for="inputEmail4" class="form-label">Legal Entity </label>
+                        <input type="text" class="form-control" id="inputEmail4">
+                      </div>
+                      <div class="col-md-2 ball position-relative">
+                        <label for="inputEmail4" class="form-label " style="visibility: hidden;"> legal enity</label>
+                        <input type="text" class="form-control  " id="inputEmail4">
+                      </div>
+                      <div class="col-md-6 ms-auto">
+                        <label for="inputEmail4" class="form-label">Product</label>
+                        <input type="text" class="form-control" id="inputEmail4">
+                      </div>
+                      
+                      <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Our Ref</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="NGN">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Their Ref</label>
+                        <input type="text" class="form-control" id="inputPassword4" placeholder="Nigerian Naira">
+                      </div>
+
+                      <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Direction</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Trade</label>
+                        <input type="text" class="form-control" id="inputPassword4" placeholder="">
+                      </div>
+
+                      <div class="seperator second mt-5 my-2">
+                        Deal Terms <small>*</small>
+                      </div>
+
+                      <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Currency pair</label>
+                        <input type="email" class="form-control" id="inputEmail4">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Base CCY / Traded Amount</label>
+                        <input type="password" class="form-control" id="inputPassword4">
+                      </div>
+                      
+                      
+                      <!-- <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                      </div> -->
+                    </form>
+                   </div>
+                 </div>
+
+                
+               </div>
+            </div>
+          
+          </section>
+
+         </div>
+
+        
+
+         
+
+         <div class="w-100 px-5 py-4 bottom_bar position-absolute">
+          <span class="px-4 py-2 me-4">Submit</span> <span  class="px-4 py-2 me-4">Save Draft</span> <span class="px-4 py-2">Cancel</span>
+        </div>
+      </div>
+    
+</div>

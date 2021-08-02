@@ -1,1 +1,435 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+:root{
+    --egora-sidebar_blue: #2D0C52;
+    --egora-hoverBlue: #360E63; 
+    --egora-sideBarTextColor: #BDBDBD;
+    --egora-dimmerText: #637185;
+    --egora-skyBlue: #ECECFD;
+    --egora-rodColor: #93A7BB;
+    --egora-normalTextColor: #758492;
+    --egora-darkColor: #000000;
+    --egora-textSkyBlue: #4693F8;
+    --egora-menuCategColor: #93A7BB;
+    // --egora-linearGradientColor: linear-gradient(to right #4693F8, #871DFB);
+}
+
+
+@font-face {
+  font-family: "Nexa Light";
+  src: url("assets/fonts/Nexa/Nexa-Light.eot");
+  src: 
+    url("./assets/fonts/Nexa/Nexa-Light.woff2") format("woff2"),
+    url("./assets/fonts/Nexa/Nexa-Light.woff") format("woff"),
+    url("./assets/fonts/Nexa/Nexa-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nexa";
+  src: url("./assets/fonts/Nexa/Nexa-Book.eot");
+  src: 
+    url("./assets/fonts/Nexa/Nexa-Book.eot?#iefix") format("embedded-opentype"),
+    url("./assets/fonts/Nexa/Nexa-Book.woff2") format("woff2"),
+    url("./assets/fonts/Nexa/Nexa-Book.woff") format("woff"),
+    url("./assets/fonts/Nexa/Nexa-Book.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nexa Bold";
+  src: url("./assets/fonts/Nexa/Nexa-Bold.eot");
+  src: 
+    url("./assets/fonts/Nexa/Nexa-Bold.eot?#iefix") format("embedded-opentype"),
+    url("./assets/fonts/Nexa/Nexa-Bold.woff2") format("woff2"),
+    url("./assets/fonts/Nexa/Nexa-Bold.woff") format("woff"),
+    url("./assets/fonts/Nexa/Nexa-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: "Nunito Sans Regular";
+    src: url("./assets/fonts/Nunito_Sans/NunitoSans-Regular.ttf");
+    src: 
+    //   url("./assets/fonts/Nexa/Nexa-Bold.eot?#iefix") format("embedded-opentype"),
+    //   url("./assets/fonts/Nexa/Nexa-Bold.woff2") format("woff2"),
+    //   url("./assets/fonts/Nexa/Nexa-Bold.woff") format("woff"),
+      url("./assets/fonts/Nunito_Sans/NunitoSans-Regular.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Nunito Sans Medium";
+    src: url("./assets/fonts/Nunito_Sans/NunitoSans-SemiBold.ttf");
+    src: 
+   
+      url("./assets/fonts/Nunito_Sans/NunitoSans-SemiBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  * > {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+
+  html{
+      font-size: 14px;
+  }
+
+//   sidebar css
+
+  .main_dashboard{
+      width: 100vw;
+      height: 100vh;
+      // border: 1px solid red;
+
+      & .modal-backdrop.fade.show{
+          opacity: 0;
+      }
+
+      & .offcanvas-body{
+        padding: 1rem 0rem !important;
+      }
+
+      & #offcanvasExample{
+          transform: none;
+          visibility: visible;
+          background-color: var(--egora-sidebar_blue);
+          color: var(--egora-sideBarTextColor);
+          transition: all 0.4s ease-in-out;
+
+          & .offcanvas-header{
+            opacity: 1;
+            transition: opacity 0.4s ease-in-out;
+          }
+          
+          
+
+          & .offcanvas-header > img{
+              object-fit: cover;
+              // width: 110px;
+              // height: 110px;   
+          }
+      }
+
+      & .first_ul, .second_ul, .third_ul, .fourth_ul{
+          list-style: none;
+          padding-left: 0;
+
+          
+          &__listItem{
+              font-size: 1.3rem;
+              font-family: 'Nunito Sans Regular';  
+          }
+      }
+
+      & .third_ul{
+          background-color: var(--egora-hoverBlue);
+          width: 100%;
+
+          & .text_gradient{
+                background: linear-gradient(to right,#4693F8 0%, #871DFB 100%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                display: inline-block;
+          }
+      }
+
+      & .divider{
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.6rem;
+      }
+  }
+
+.major_side{
+  background-color: #ffff;
+  width: 77%;
+  transition: width 0.4s  ease-in-out ;
+}
+
+.nav_search{
+   &__input{
+    border-radius: 30px;
+    border-color: var(--egora-skyBlue);
+    background-color: var(--egora-skyBlue);
+   }
+}
+
+.search_icon{
+  top: 10px;
+  left: 22px;
+}
+
+.user_details {
+  font-family: 'Nunito Sans Regular';
+
+   & .notification{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: var(--egora-skyBlue);
+  }
+
+  & .named_circle{
+    color: white;
+    font-weight: bold;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    background-color: var(--egora-hoverBlue);
+  }
+}
+
+
+.betweenNavAnd_body{
+  background-color: var(--egora-skyBlue);
+  font-family: 'Nexa Bold';
+  & span:nth-child(1){
+    color: var(--egora-hoverBlue);
+    font-size: 1.4rem;
+    position: relative;
+
+    &::after{
+      position: absolute;
+      content: "";
+      height: 11px;
+      top: 8px;
+      left: 105px;
+      width: 2px;
+      background-color: var(--egora-dimmerText);
+      transform: rotate(180deg);
+    }
+  }
+
+  & span:nth-child(3){
+    font-size: 1rem;
+    font-weight: bold;
+    position: relative;
+    
+    &::after{
+      position: absolute;
+      content: '';
+      height: 5px;
+      bottom: 1px;
+      width:  5px;
+      border-radius: 50%;
+      background-color: var(--egora-hoverBlue);
+    }
+  }
+
+  & span:nth-child(4){
+    color: var(--egora-dimmerText);
+    font-size: 1rem;
+  }
+}
+
+
+.dashboard_body{
+  //  &::after{
+  //    position: absolute;
+  //    content: '';
+  //    background-color: var(--egora-rodColor);
+  //    height: inherit;
+  //  }
+}
+
+.basic_information{
+    color: var(--egora-textSkyBlue);
+    font-family: 'Nexa Light';
+    font-size: 1.4rem;
+}
+
+.list_parent{
+
+  & .list_item{
+    cursor: pointer;
+    font-family: 'Nexa Light';
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease-in-out;
+
+    &:hover{
+      background-color: var(--egora-skyBlue); 
+    }
+    
+  }
+}
+
+.form_container {
+  display: none;
+  animation: 600ms ease-in-out 100ms comein;
+      & .seperator{
+        font-family: 'Nexa';
+        font-weight: 800;
+        color: var(--egora-darkColor);
+        font-size: 1.2rem;
+        letter-spacing: 0.09ch;
+        line-height: 1.2rem;
+        position: relative;
+        overflow: hidden;
+       
+
+        &::after{
+          content: '';
+          position: absolute;
+          height: 2px;
+          width: 100%;
+          left: 182px;
+          top: 8px;
+          border: 1px dashed var(--egora-normalTextColor);
+      } 
+    }
+
+    & .seperator.second {
+       color: var(--egora-menuCategColor);
+        & small{
+          color: red;
+        }
+        &::after{
+          left: 130px;
+          top: 7px;
+        }
+    }
+
+
+  & label{
+      font-size: 1.2rem;
+      font-family: 'Nunito Sans Medium';
+    }
+
+  & .form-control{
+     border:2px solid var(--egora-darkColor);
+     border-radius: 6px;
+  }
+
+  & .ball{
+    &::after{
+      content: '';
+      position: absolute;
+      left: 100%;
+      top: 29px;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      background-color: var(--egora-textSkyBlue);
+    }
+  }
+  
+}
+
+
+
+.dashboard_body .col-md-9{
+   &::after{
+     position: absolute;
+     content: '';
+     border: 1px solid black;
+     width: 3px;
+   }
+}
+
+
+.ruler{
+  &::before{
+    position: absolute;
+    content: '';
+    height: 110%;
+    left: 24%;
+    width: 1px;  
+    background-color: var(--egora-menuCategColor);
+  }
+}
+
+
+.bottom_bar{
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--egora-skyBlue);
+  font-family: 'Nexa Light';
+  font-size: 1.2rem;
+
+  & span{
+    border-radius: 20px;
+  }
+
+  & span:nth-child(1){
+    color: white;
+    background: linear-gradient(to right, #27AE60 0%, #219653 100%);
+  }
+
+  & span:nth-child(2){
+    border:1px solid #637185;
+    background-color: white;
+
+  }
+
+  & span:nth-child(3){
+    color: white;
+    background: var(--egora-menuCategColor);
+  }
+}
+
+.offcanvas-header.hide{
+  opacity: 0 !important;
+}
+
+.toggle_container{
+  cursor: pointer;
+}
+
+.targetted_icon.hide, .targetted.hide{
+  display: none !important;
+}
+
+#offcanvasExample.reduceSize{
+  width: 4% !important;
+}
+
+.major_side.increaseSize{
+  width: 97%;
+}
+
+.showWhenTogglerIsOff.hide{
+  display: none;
+}
+
+.showWhenTogglerIsOff.show{
+  display: inline-block;
+}
+
+//   ends here
+
+
+// custom sizes, margin, padding
+  .w-77{
+    width: 77%;
+  }
+
+  .mb-7{
+    margin-bottom: 8rem;
+  }
+
+  //animations
+
+  @keyframes comein{
+    from{
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to{
+
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  
+
