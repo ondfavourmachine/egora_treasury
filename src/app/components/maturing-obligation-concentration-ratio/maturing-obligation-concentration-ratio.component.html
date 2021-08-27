@@ -1,0 +1,60 @@
+<div class="container scrollable_side">
+    <div class="row g-2" style="">
+     
+    <div class="col-md-12 mb-5 boxshadowed" >
+        <h3 >Maturing Obligations for Week-23 2021</h3>
+      <div class="table_house w-100 position-relative">
+          <div class="placeholder position-absolute"></div>
+        <table class="table " style="">
+            <thead class=" ">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Product Category</th>
+                <th scope="col">Script Detail</th>
+                <th scope="col">Counter Party</th>
+                <th scope="col">Maturity Date</th>
+                <th scope="col">Currency</th>
+                <th scope="col">Total Volume From Portfolio</th>
+              </tr>
+            </thead>
+            
+                <tbody >
+                    <tr *ngFor="let MO of arrOfMO; index as i">
+                        <th scope="row"> {{i + 1}}</th>
+                        <td> {{ MO?.productCategory }} </td>
+                        <td>{{ MO?.scriptDetail }}</td>
+                        <td> {{ MO?.counterParty }} </td>
+                        <td>{{ MO?.maturityDate }} </td>
+                        <td>{{ MO?.currency }} </td>
+                        <td> {{ formatNumber(MO?.totalVolumeFromPortfolio, MO?.currency) }} </td>
+                      </tr>
+                 
+                </tbody>
+          
+          </table>
+      </div>
+ 
+    </div>
+
+
+    <div class="col-md-6 boxshadowed">
+        <div  class="p-2">
+            <highcharts-chart 
+            [Highcharts]="pieChart"
+            [options]="pieChartOption"
+          
+            style="width: 100%; height: 100%; display: block;"
+          ></highcharts-chart>
+    </div>
+  </div>
+  <div class="col-md-6 boxshadowed">
+    <div  class="p-2">
+        <highcharts-chart 
+        [Highcharts]="negativeChart"
+        [options]="negativeColumnChartOptions"
+      
+        style="width: 100%; height: 100%; display: block;"
+      ></highcharts-chart>
+</div>
+</div>
+  </div>

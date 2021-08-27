@@ -1,0 +1,92 @@
+// .highcharts-credits{
+//     display: none !important;
+// }
+
+.scrollable_side{
+    overflow-y: auto;
+    height: 735px;
+    scrollbar-width: none;  
+}
+
+
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+// ::-webkit-scrollbar-thumb {
+//     background: #FF0000;
+// }
+
+
+
+.subMenu{
+    height: 0px; 
+    visibility: hidden;
+    padding: 0;
+    // background-color: rgb(48 7 95 / 95%);
+    background-color: rgba(48, 5, 97, 0.568);
+    list-style: none ;
+    cursor: pointer;
+    transition: height 0.3s ease-in-out;   
+}
+
+
+.subMenu > li{
+    padding-left: 4.2rem;
+    &:hover{
+        color: white;
+        background-color: var(--egora-hoverBlue);
+    }
+}
+
+.listInSubMenu{
+    position: relative;
+    &::after{
+        position: absolute;
+        content: '';
+        width: 5px;
+        height: 95%;
+        left: 0px;
+        top: 0px;
+        border-radius: 3px;
+        display: none;
+        background: white;
+        transition: 0.3s ease-in-out;
+    }
+}
+
+.listInSubMenu:hover::after{
+    display: block;
+}
+
+
+.subMenu.visible{
+    height: auto;
+    // transition: height 0.4s ease-in-out, opacity 0.3s ease-in-out;  
+}
+
+.targetted_icon img{
+    transition: all 0.3s ease-in-out; 
+}
+
+.rotated{
+   transform: rotate(90deg);
+   transition: transform 0.3s ease-in-out; 
+}
+
+.baselParent {
+    & .baselSubListFirst{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    & .baselSubListChild{
+        height: auto;
+        
+    }
+}
+
+
+

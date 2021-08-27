@@ -12,6 +12,7 @@
     --egora-darkColor: #000000;
     --egora-textSkyBlue: #4693F8;
     --egora-menuCategColor: #93A7BB;
+    --sideBar-size: 300px;
     // --egora-linearGradientColor: linear-gradient(to right #4693F8, #871DFB);
 }
 
@@ -83,15 +84,26 @@
       font-size: 14px;
   }
 
+  body{
+    overflow-x: hidden;
+    scrollbar-width: none;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
 //   sidebar css
 
   .main_dashboard{
       width: 100vw;
-      height: 100vh;
+      height: auto;
       // border: 1px solid red;
 
       & .modal-backdrop.fade.show{
-          opacity: 0;
+          opacity: 1;
+          // display: none;
       }
 
       & .offcanvas-body{
@@ -125,7 +137,7 @@
 
           
           &__listItem{
-              font-size: 1.3rem;
+              font-size: 0.9rem;
               font-family: 'Nunito Sans Regular';  
           }
       }
@@ -145,7 +157,7 @@
 
       & .divider{
         font-family: 'Poppins', sans-serif;
-        font-size: 1.6rem;
+        font-size: 1.2rem;
       }
   }
 
@@ -348,6 +360,8 @@
 }
 
 
+
+
 .bottom_bar{
   bottom: 0;
   left: 0;
@@ -387,6 +401,7 @@
 
 .targetted_icon.hide, .targetted.hide{
   display: none !important;
+  
 }
 
 #offcanvasExample.reduceSize{
@@ -431,5 +446,37 @@
     }
   }
 
+  @media screen and (min-width: 900px){
+    .main_dashboard{
+      // height: auto;
+       & #offcanvasExample{
+     
+         width: var(--sideBar-size);
+       }
+
+       & .major_side{
+        //  width: 82%;
+        width: calc(100% - var(--sideBar-size));
+       }
+    }
+
+  }
+  
+  @media screen and (max-width: 1000px) {
+    .main_dashboard{
+     
+        .major_side{
+          width: calc(100% - var(--sideBar-size));
+        }
+   
+    }
+  }
+
+
+  // @media screen and (max-width: 900px) {
+  //   .main_dashboard{
+
+  //   }
+  // }
   
 

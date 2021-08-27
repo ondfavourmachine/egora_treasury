@@ -1,0 +1,90 @@
+.boxshadowed{
+    border-radius: 8px;
+    box-shadow: rgb(229, 229, 229, 0.3) 0px 8px 24px;
+}
+
+.table_house{
+    height: 450px;
+    display: block;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    white-space: nowrap;
+    border: 2px solid rgba(149, 157, 165, 0.2);
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+table{
+    text-align: left;
+    position: relative;
+    border-collapse: collapse;
+    background-color: #F5F3F5;
+    
+
+    & .placeholder{
+        background-color: black;
+        z-index: 22px;
+        
+    }
+}
+
+
+
+
+thead th {
+    background: #ffff;
+    color: var(--egora-sidebar_blue);
+    position: sticky;
+    z-index: 20;
+   
+    top: 0; /* Don't forget this, required for the stickiness */
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+  }
+
+  thead tr th{
+    border-color: #F5F3F5;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+
+
+tbody{
+    transform: translateY(0);
+    font-family: 'Nexa Bold';
+    font-size: 1rem;
+    animation: 30s linear 1s infinite running scrollUp;
+
+    & tr{
+         border-color: rgb(249 250 251 / 30%);
+      }
+
+    &:hover{
+        transform: translateY(0);
+        animation-play-state: paused;
+    }
+}
+
+
+.scrollable_side{
+    overflow-y: auto;
+    height: 735px;
+    scrollbar-width: none;  
+}
+
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+.boxshadowed > h3{
+    font-family: 'Nexa Bold';
+    font-size: 1.40rem;
+}
+
+@keyframes scrollUp {
+    from{transform: translateY(400px);}
+    to{transform: translateY(-500px)}
+}
+
+
+

@@ -1,0 +1,56 @@
+.chartDisplay{
+    border-radius: 10px;
+}
+
+
+.scrollable_side{
+    overflow-y: auto;
+    height: 735px;
+    scrollbar-width: none;  
+}
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+.nav-tabs{
+    background-color: var(--egora-skyBlue) !important;
+
+    & button{
+        font-size: 1.4rem;
+        color: var(--egora-sidebar_blue);
+        font-family: 'Nexa Bold';
+    }
+}
+
+.nav-link.active{
+    color: #495057;
+    background-color:transparent;
+    border-color: transparent;
+    position: relative;
+
+    &::after{
+        content: '';
+        position: absolute;
+        width: 50%;
+        height: 5px;
+        bottom: 0;
+        margin: 0 auto;
+        transform: scale(0);
+        left: 0;
+        right: 0;
+        background: var(--egora-hoverBlue);
+        animation:  scaleUp .2s ease-in-out .05s forwards;
+    }
+
+
+    @keyframes scaleUp {
+        from{ transform: scale(0)}
+        to{transform: scale(1)}
+    }
+
+
+}
+
+
