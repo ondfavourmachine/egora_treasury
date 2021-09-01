@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
-import { yieldOnAssets } from 'src/app/mockdata.ts/columnCharts';
+import { costOfFunds } from 'src/app/mockdata.ts/columnCharts';
 
 @Component({
-  selector: 'app-yield-on-assets',
-  templateUrl: './yield-on-assets.component.html',
-  styleUrls: ['./yield-on-assets.component.scss']
+  selector: 'app-cost-of-funds',
+  templateUrl: './cost-of-funds.component.html',
+  styleUrls: ['./cost-of-funds.component.scss']
 })
-export class YieldOnAssetsComponent implements OnInit {
+export class CostOfFundsComponent implements OnInit {
   lineChart: typeof Highcharts = Highcharts;
   lineChartOption: Highcharts.Options = {};
   constructor() { }
@@ -15,7 +15,7 @@ export class YieldOnAssetsComponent implements OnInit {
   ngOnInit(): void {
     this.lineChartOption = {
       title: {
-        text: `Yield on Assets for the year ${yieldOnAssets.time}`
+        text: `Cost of funds for the year ${costOfFunds.time}`
     },
 
     subtitle: {
@@ -31,7 +31,7 @@ export class YieldOnAssetsComponent implements OnInit {
     },
 
     xAxis: {
-       categories : yieldOnAssets.months,
+       categories : costOfFunds.months,
         // accessibility: {
         //     rangeDescription: 'Range: 2010 to 2017'
         // }
@@ -77,13 +77,13 @@ export class YieldOnAssetsComponent implements OnInit {
     },
 
     series: [{
-        name: yieldOnAssets.data.actuals.name,
+        name: costOfFunds.data.actuals.name,
         type: 'line',
-        data: [...yieldOnAssets.data.actuals.data]
+        data: [...costOfFunds.data.actuals.data]
     }, {
-      name: yieldOnAssets.data.average.name,
+      name: costOfFunds.data.average.name,
       type: 'line',
-      data: [...yieldOnAssets.data.average.data]
+      data: [...costOfFunds.data.average.data]
     }
   ],
 
@@ -103,7 +103,5 @@ export class YieldOnAssetsComponent implements OnInit {
     }
     }
   }
-
-  
 
 }

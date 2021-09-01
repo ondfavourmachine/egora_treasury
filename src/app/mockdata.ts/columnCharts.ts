@@ -142,7 +142,7 @@ export const corporateBonds:myChart =  {
      },
     },
     title: {
-        text: 'Monthly Volume for Cooperate Bonds'
+        text: 'Monthly Volume for Coperate Bonds'
     },
     colorSelection: ['#FE5F00', '#23231A'],
     data: [
@@ -900,3 +900,188 @@ export const yieldOnAssets = {
         }
     }
 }
+
+// data for yield on Assets
+export const costOfFunds = {
+    time: 2020,
+    months:  [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec'
+    ],
+
+    data: {
+        actuals: {
+            name: 'Actual',
+            data: [  4,4.59,
+                4.80,
+                5.10,
+                6.30,
+                3.85,
+                5.87,
+                6.50,
+                5.50,
+                5, 5.12, 5.89]
+        },
+        average: {
+            name: 'Average',
+            data: [4.81,
+                4.18,
+                3.50,
+                3.40,
+                3.89,
+                3.23,
+                3.78,
+                5.65,
+                6.05,
+                6.89,
+                6.24,
+                6.78]
+        }
+    }
+}
+
+
+
+// Totals for Variance Analysis Data
+export const TotalFixedIncome = {
+    name: 'TotalFixedIncome',
+    chartName: 'column',
+    yAxisInfo: {
+        min: 0,
+        max: 2000,
+    title: {
+        text: 'Naira (Millions)'
+     },
+    },
+    title: {
+        text: 'Total Monthly Volume for Fixed Income',
+    },
+   
+    colorSelection: ['orange', 'green'],
+    data: [
+        {budget: 1755.01, actual: 1655.19, },
+        {budget: 603.55, actual: 377.87},
+        {budget: 610.54, actual:  454.38},
+        {budget: 448.95, actual:  332.66 },
+        {budget: 862.46, actual: 759.66 },
+        {budget: 795.12, actual:  679.69},
+        {budget: 692.15, actual:  659.62},
+        {budget: 758.91, actual: 729.65 },
+        {budget: 1122.92, actual: 1109.62},
+        {budget: 1203.06, actual: 1200.13},
+        {budget: 1415.78, actual: 1375.45 },
+        {budget: 1526.74, actual: 1466.70 }
+    ] as mData[],
+    aDDpercentageCalc: function () {
+       const data = (this.data as Array<{budget: number, actual: number, percentageCallback: () => number}>).map(elem => (elem.actual / elem.budget) * 100 );
+       return data;
+    },  
+}
+
+export const TotalForexAndDerivatives = {
+    name: 'TotalForexAndDerivatives',
+    chartName: 'column',
+    yAxisInfo: {
+        min: 0,
+        max: 2000,
+    title: {
+        text: 'Naira (Millions)'
+     },
+    },
+    title: {
+        text: 'Total Monthly Volume for Total Forex and Derivatives',
+    },
+   
+    colorSelection: ['#FF9999', '#660099'],
+    data: [
+        {budget: 1475.01, actual: 1210.19, },
+        {budget: 673.55, actual: 507.87},
+        {budget: 910.54, actual:  244.38},
+        {budget: 548.95, actual:  372.66 },
+        {budget: 862.46, actual: 759.66 },
+        {budget: 795.12, actual:  679.69},
+        {budget: 592.15, actual:  359.62},
+        {budget: 898.91, actual: 729.65 },
+        {budget: 1122.92, actual: 1109.62},
+        {budget: 1203.06, actual: 1200.13},
+        {budget: 1415.78, actual: 1375.45 },
+        {budget: 1826.74, actual: 1166.70 }
+    ] as mData[],
+    aDDpercentageCalc: function () {
+       const data = (this.data as Array<{budget: number, actual: number, percentageCallback: () => number}>).map(elem => (elem.actual / elem.budget) * 100 );
+       return data;
+    },  
+}
+
+export const TotalMoneyMarket = {
+    name: 'TotalForexAndDerivatives',
+    chartName: 'column',
+    yAxisInfo: {
+        min: 0,
+        max: 5000,
+    title: {
+        text: 'Naira (Millions)'
+     },
+    },
+    title: {
+        text: 'Total Monthly Volume for Total Forex and Derivatives',
+    },
+   
+    colorSelection: ['#006666', '#FFFF00'],
+    data: [
+        {budget: 2475.01, actual: 1810.19, },
+        {budget: 3673.55, actual: 2507.87},
+        {budget: 1910.54, actual:  1244.38},
+        {budget: 2548.95, actual:  2372.66 },
+        {budget: 862.46, actual: 759.66 },
+        {budget: 795.12, actual:  679.69},
+        {budget: 1592.15, actual:  959.62},
+        {budget: 898.91, actual: 729.65 },
+        {budget: 1122.92, actual: 1109.62},
+        {budget: 2203.06, actual: 1200.13},
+        {budget: 3415.78, actual: 2975.45 },
+        {budget: 3926.74, actual: 3266.70 }
+    ] as mData[],
+    aDDpercentageCalc: function () {
+       const data = (this.data as Array<{budget: number, actual: number, percentageCallback: () => number}>).map(elem => (elem.actual / elem.budget) * 100 );
+       return data;
+    },  
+}
+
+
+
+// Custom HighCharts.tooltip
+ export const customTooltip = () => {
+     return {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.2f} Million</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        formatter: function(){
+            const strToDisplay = this.points.map((elem) => {
+                const figureInString = new Intl.NumberFormat('en').format(elem.point.y/ 1000);
+                return `
+                <table>
+                <tr>
+                    <td style="color:{series.color};padding:0">${elem.series.name}: </td> 
+                    <td style="padding:0"><b>${figureInString}  Billion</b></td>
+               </tr>
+                </table>
+                 `
+            }).join(' ')
+            return strToDisplay;
+        },
+        useHTML: true
+    }
+ }

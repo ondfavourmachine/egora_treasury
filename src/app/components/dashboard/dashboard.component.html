@@ -98,26 +98,32 @@
                         <li (click)="openBasel()" class="listInSubMenu mt-2 py-2 baselParent">
                           <div class="w-100" >
                             <div class="baselSubListFirst">
-                              <span class="me-5 ps-2 targetted">BASEL</span>
+                              <span class="me-5 targetted">BASEL</span>
                               <span id="rotate_2" class="ms-auto pe-3 targetted_icon"><img height="12px" width="12px" src="../../../assets/images/arrow_right.svg" alt=""></span>  
                             </div>
-                             <div class="baselSubListChild border">
-                               <span class="d-flex align-items-end ps-3 my-2 ">
-                                 <app-basel-imgs [baselImg]="'capital'"></app-basel-imgs>
+                             <div class="baselSubListChild  ms-3">
+                               <span class="baselSubListChild__children d-flex align-items-end my-2 ps-3">
+                                 <!-- <app-basel-imgs [baselImg]="'capital'"></app-basel-imgs> -->
                                  <span class="ps-1">Minimum capital Requirement</span>
                                 </span>
-                               <span class="d-block ps-4 my-2 ">Leverage ratio</span>
-                               <span class="d-block ps-4 my-2 ">Liquidity requirement</span>
+                               <span class="baselSubListChild__children d-flex align-items-end my-2 ps-3">
+                                <!-- <app-basel-imgs [baselImg]="'leverage'"></app-basel-imgs> -->
+                                 <span class="ps-1">Leverage ratio</span>
+                                </span>
+                               <span class="baselSubListChild__children d-flex align-items-end my-2 ps-3">
+                                <!-- <app-basel-imgs [baselImg]="'financial_liquidity'"></app-basel-imgs> -->
+                                 <span class="ps-1">Liquidity requirement</span>
+                                </span>
                              </div>
                           </div>
 
                         </li>
-                        <li class=" listInSubMenu my-2 py-2" >Funding Gap</li>
+                        <!-- <li class=" listInSubMenu my-2 py-2" >Funding Gap</li> -->
                         <li (click)="gotoMoAndConcRatio()" class=" listInSubMenu my-2 py-2" >
                            ALM    
                         </li>   
                         <li (click)="routeToASpecificPage('variance-analysis')" class="listInSubMenu   my-2 py-2">Variance Analysis</li>
-                        <li class=" listInSubMenu mt-2 py-2">Cost of Funds </li>
+                        <li (click)="routeToASpecificPage('cof')" class=" listInSubMenu mt-2 py-2">Cost of Funds </li>
                         <li (click)="routeToASpecificPage('yield-on-assets')" class=" listInSubMenu mt-2 py-2">Yield on Assets </li>
                       </ul>
                

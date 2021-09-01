@@ -16,36 +16,7 @@
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <div class="container scrollable_side">
             <div class="row g-2" style="">
-              <div class="col-6 mt-4 mb-3 chartDisplay">
-                 <div class="p-2">
-                  <highcharts-chart 
-                  [Highcharts]="chartObject"
-                  [options]="chartOptions"
-                
-                  style="width: 100%; height: 100%; display: block;"
-                ></highcharts-chart>
-                 </div>
-              </div>
-              <div class="col-6  mt-4  mb-3 chartDisplay">
-                 <div class="p-2">
-                  <highcharts-chart 
-                  [Highcharts]="areaChart"
-                  [options]="areaChartOptions"
-                
-                  style="width: 100%; height: 100%; display: block;"
-                ></highcharts-chart>
-                 </div>
-              </div>
-              <div class="col-6 mt-2 mb-3 chartDisplay">
-                 <div class="p-2">
-                  <highcharts-chart 
-                  [Highcharts]="pieCharts"
-                  [options]="pieChartOptions"
-                
-                  style="width: 100%; height: 100%; display: block;"
-                ></highcharts-chart>
-                 </div>
-              </div>
+            
               <div class="col-6 mt-2 mb-3 chartDisplay">
                 <div class="w-50 ms-auto px-3 py-3">
                   <form >
@@ -61,7 +32,7 @@
                           </select>
                         </div>
                         <div class="col">
-                            <select (change)="changeColumnToPie($event, 'columnChartsOptions')" id="anotherTest" class="form-select">
+                            <select hidden id="anotherTest" class="form-select">
                                 <option >Type of chart</option>
                                 <option value="Figures" selected>Figures-(Budget/Actual)</option>
                                 <option value="Percentages">Percentages-(Budget/Actual)</option>
@@ -73,7 +44,73 @@
                   <div class="p-2">
                     <highcharts-chart 
                     [Highcharts]="columnChart"
-                    [options]="columnChartsOptions"
+                    [options]="columnChartsOptionsForTF"
+                    style="width: 100%; height: 100%; display: block;"
+                  ></highcharts-chart>
+                  </div>
+              </div>
+
+              <div class="col-6 mt-2 mb-3 chartDisplay">
+                <div class="w-50 ms-auto px-3 py-3">
+                  <form class="">
+                    <div class="row">
+                        <div class="col">
+                          <select id="testingID" class="form-select">
+                            <option >Select Time range</option>
+                            <option value="" >Weekly</option>
+                            <option value="" selected >Monthly</option>
+                            <option value="" >Quaterly</option>
+                            <option value="" >Bi-annual</option>
+                            <option value="" >Yearly</option>
+                          </select>
+                        </div>
+                        <div class="col">
+                            <select hidden id="anotherTest" class="form-select">
+                                <option >Type of chart</option>
+                                <option value="Figures" selected>Figures-(Budget/Actual)</option>
+                                <option value="Percentages">Percentages-(Budget/Actual)</option>
+                              </select>
+                        </div>
+                      </div>
+                  </form>
+              </div>
+                  <div class="p-2">
+                    <highcharts-chart 
+                    [Highcharts]="columnChart"
+                    [options]="columnChartsOptionsForTFD"
+                    style="width: 100%; height: 100%; display: block;"
+                  ></highcharts-chart>
+                  </div>
+              </div>
+
+              <div class="col-6 mt-2 mb-3 chartDisplay">
+                <div class="w-50 ms-auto px-3 py-3">
+                  <form >
+                    <div class="row">
+                        <div class="col">
+                          <select id="testingID" class="form-select">
+                            <option >Select Time range</option>
+                            <option value="" >Weekly</option>
+                            <option value="" selected >Monthly</option>
+                            <option value="" >Quaterly</option>
+                            <option value="" >Bi-annual</option>
+                            <option value="" >Yearly</option>
+                          </select>
+                        </div>
+                        <div class="col">
+                            <select hidden  id="anotherTest" class="form-select">
+                                <option >Type of chart</option>
+                                <option value="Figures" selected>Figures-(Budget/Actual)</option>
+                                <option value="Percentages">Percentages-(Budget/Actual)</option>
+                              </select>
+                        </div>
+                      </div>
+                  </form>
+              </div>
+                  <div class="p-2">
+                    <highcharts-chart 
+                    [Highcharts]="columnChart"
+                    [options]="columnChartsOptionsForMoneyMarket"
                     style="width: 100%; height: 100%; display: block;"
                   ></highcharts-chart>
                   </div>

@@ -56,6 +56,10 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   
 
   openBasel(){
+      const child = document.querySelector('.baselSubListChild');
+      const baselParent = document.querySelector('.baselParent');
+      baselParent.classList.contains('dropdown_activated') ? baselParent.classList.remove('dropdown_activated') : baselParent.classList.add('dropdown_activated');
+      child.classList.contains('open') ?  child.classList.remove('open') :  child.classList.add('open'); 
     const rotate = document.getElementById('rotate_2');
     rotate.firstElementChild.classList.contains('rotated') ?  rotate.firstElementChild.classList.remove('rotated') :  rotate.firstElementChild.classList.add('rotated');
   }

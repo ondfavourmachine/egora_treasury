@@ -9,6 +9,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { MaturingObligationConcentrationRatioComponent } from 'src/app/components/maturing-obligation-concentration-ratio/maturing-obligation-concentration-ratio.component';
 import { YieldOnAssetsComponent } from 'src/app/components/yield-on-assets/yield-on-assets.component';
 import { BaselImgsComponent } from 'src/app/components/basel-imgs/basel-imgs.component';
+import { CostOfFundsComponent } from 'src/app/components/cost-of-funds/cost-of-funds.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
     {path: 'variance-analysis', component: VarianceComponent},
     {path: 'general', component: GeneralChartsComponent},
     {path: 'mOCR', component: MaturingObligationConcentrationRatioComponent},
-    {path: 'yield-on-assets', component: YieldOnAssetsComponent}
+    {path: 'yield-on-assets', component: YieldOnAssetsComponent},
+    {path: 'cof', component: CostOfFundsComponent}
   ]
 },
  
@@ -34,6 +36,7 @@ const routes: Routes = [
     VarianceComponent,
     GeneralChartsComponent,
     BaselImgsComponent,
+    CostOfFundsComponent,
     YieldOnAssetsComponent,
     MaturingObligationConcentrationRatioComponent
   ],
