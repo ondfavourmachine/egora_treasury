@@ -120,46 +120,62 @@
     </div>
     <!-- second pane -->
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-            <div class="container scrollable_side">
-                <div class="row g-2" style="">
-                 
-                  <div *ngFor="let AChart of ArrayOfFixedIncomeCharts; index as i" class="col-6 mt-2 mb-3 chartDisplay">
-                      <div class="w-50 ms-auto px-3 py-3">
-                          <form >
-                            <div class="row">
-                                <div class="col">
-                                  <select [id]="'inputState_'+i" class="form-select">
-                                    <option >Select Time range</option>
-                                    <option value="" >Weekly</option>
-                                    <option value="" selected >Monthly</option>
-                                    <option value="" >Quaterly</option>
-                                    <option value="" >Bi-annual</option>
-                                    <option value="" >Yearly</option>
-                                  </select>
+       <div class="container-fluid">
+         <div class="row">
+           <div class="col-md-2 small_sideBar">
+             <ul>
+               <li (click)="changeView($event)" class="bonds">
+                  State Bonds
+               </li>
+               <li (click)="changeView($event)" class="bonds">
+                 Federal Bonds
+              </li>
+             </ul>
+           </div>
+           <div class="col-md-10">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+              <div class="container scrollable_side">
+                  <div class="row g-2" style="">
+                   
+                    <div *ngFor="let AChart of ArrayOfFixedIncomeCharts; index as i" class="col-6 mt-2 mb-3 chartDisplay">
+                        <div class="w-50 ms-auto px-3 py-3">
+                            <form >
+                              <div class="row">
+                                  <div class="col">
+                                    <select [id]="'inputState_'+i" class="form-select">
+                                      <option >Select Time range</option>
+                                      <option value="" >Weekly</option>
+                                      <option value="" selected >Monthly</option>
+                                      <option value="" >Quaterly</option>
+                                      <option value="" >Bi-annual</option>
+                                      <option value="" >Yearly</option>
+                                    </select>
+                                  </div>
+                                  <div class="col">
+                                      <select (change)="changeColumnToPercentage($event, i, AChart, 'FixedIncomeData')" [id]="'inputState_'+i" class="form-select">
+                                          <option >Type of chart</option>
+                                          <option value="Figures" selected>Figures (Budget/Actual)</option>
+                                          <option value="Percentages">Percentages(Budget/Actual)</option>
+                                        </select>
+                                  </div>
                                 </div>
-                                <div class="col">
-                                    <select (change)="changeColumnToPercentage($event, i, AChart, 'FixedIncomeData')" [id]="'inputState_'+i" class="form-select">
-                                        <option >Type of chart</option>
-                                        <option value="Figures" selected>Figures (Budget/Actual)</option>
-                                        <option value="Percentages">Percentages(Budget/Actual)</option>
-                                      </select>
-                                </div>
-                              </div>
-                          </form>
-                      </div>
-                      <div  class="p-2">
-                        <highcharts-chart 
-                        [Highcharts]="AChart.columnChart"
-                        [options]="AChart.columnChartOption"
-                        [(update)] = "updateFlag"
-                        style="width: 100%; height: 100%; display: block;"
-                      ></highcharts-chart>
-                      </div>
+                            </form>
+                        </div>
+                        <div  class="p-2">
+                          <highcharts-chart 
+                          [Highcharts]="AChart.columnChart"
+                          [options]="AChart.columnChartOption"
+                          [(update)] = "updateFlag"
+                          style="width: 100%; height: 100%; display: block;"
+                        ></highcharts-chart>
+                        </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-        </div>
+          </div>
+           </div>
+         </div>
+       </div>
     </div>
 
     <!-- third Pane -->

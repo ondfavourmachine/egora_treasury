@@ -33,6 +33,8 @@ export class VarianceComponent implements OnInit {
   ArrayOfMoneyMarket: ChartsToDisplay[] = [];
   columnPromissoryChartOptions: Highcharts.Options = {};
   updateFlag: boolean = false;
+
+//   views: 'state_bonds' | 'fed_bonds' | '' = 'state_bonds';
   
   constructor() { }
 
@@ -398,6 +400,13 @@ export class VarianceComponent implements OnInit {
 
      const chartToBeInserted: ChartsToDisplay = {name: newChart.name, columnChart: Highcharts, columnChartOption: newoptions};
      this[arrayInThisCompToUse].splice(index, 1, chartToBeInserted);
+ }
+
+ changeView(event: Event){
+     const bonds = document.querySelectorAll('.bonds');
+     bonds.forEach(elem => elem.classList.remove('beVisible'));
+     (event.target as HTMLElement).classList.add('beVisible');
+
  }
  
 
